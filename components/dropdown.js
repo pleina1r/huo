@@ -1,11 +1,3 @@
-// this file is a plain classic script (not an es module).
-// include it the same way as other scripts in your project, e.g.:
-// <script src="components/dropdown.js"></script>
-// then use the element in html like:
-// <dropdown data="local">
-//   <span>utc</span>
-//   <span>pst</span>
-// </dropdown>
 
 if (!customElements.get('c-dropdown')) {
     class Dropdown extends HTMLElement {

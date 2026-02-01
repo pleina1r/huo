@@ -23,28 +23,28 @@ document.addEventListener('DOMContentLoaded', () => {
     )).then(() => {
         console.log('Loaded language packs:', languagePacks);
         loadLanguage();
-    });
-    
-    // initialize the language selector
-    const languageSelector = document.querySelector('.language_selector');
-    languageSelector.onchange = function (value) {
-        console.log('Language changed to:', value);
-        const currentLang = value;
-        switch (currentLang) {
-            case '🇺🇸':
-                localStorage.setItem('language', 'en');
-                loadLanguage(languagePacks[0]);
-                break;
-            case '🇨🇳':
-                localStorage.setItem('language', 'cn');
-                loadLanguage(languagePacks[1]);
-                break;
-            default:
-                console.warn('Unknown language selected:', currentLang);
-        }
-    };
+        
+        // initialize the language selector
+        const languageSelector = document.querySelector('.language_selector');
+        languageSelector.onchange = function (value) {
+            console.log('Language changed to:', value);
+            const currentLang = value;
+            switch (currentLang) {
+                case '🇺🇸':
+                    localStorage.setItem('language', 'en');
+                    loadLanguage(languagePacks[0]);
+                    break;
+                case '🇨🇳':
+                    localStorage.setItem('language', 'cn');
+                    loadLanguage(languagePacks[1]);
+                    break;
+                default:
+                    console.warn('Unknown language selected:', currentLang);
+            }
+        };
 
-    languageSelector.value = flag;
+        languageSelector.value = flag;
+    });
     
 
 });
@@ -58,6 +58,9 @@ function loadLanguage(pack) {
         const savedLanguage = localStorage.getItem('language') || 'en';
         let idx = languageFiles.indexOf(savedLanguage);
         pack = languagePacks[idx];
+        if (!pack && languagePacks.length > 0) {
+            pack = languagePacks[0]; // fallback to first pack (en)
+        }
     }
 
     let keys = Object.keys(pack);
