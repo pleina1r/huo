@@ -1,0 +1,264 @@
+:root {
+    --picker_color: var(--text);
+}
+
+
+.header_minimized {
+    min-width:10vw;
+    width: auto;
+    padding-left:0.5rem;
+    padding-right: 0.5rem;
+    z-index: 2;
+    box-shadow: 
+        0 15px 30px -5px rgba(0, 0, 0, 0),
+        inset 0 1px 0 color-mix(in srgb, var(--glass), transparent 40%);
+    cursor: pointer;
+    color: var(--text);
+    font-size: small;
+    transition: all 0.2s
+}
+
+.header_minimized.active {
+    background: linear-gradient(to bottom right,
+      color-mix(in srgb, var(--glass), transparent 30%),
+      color-mix(in srgb, var(--glass), transparent 65%));
+  border: 1px solid color-mix(in srgb, var(--glass), transparent 40%);
+  box-shadow: 
+    0 25px 50px rgba(0, 0, 0, 0.3),
+    inset 0 0 15px color-mix(in srgb, var(--glass), transparent 60%),
+    inset 0 1px 0 color-mix(in srgb, var(--glass), transparent 20%);
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    transform: translateY(8px);
+    z-index: 0;
+    cursor: default;
+}
+
+.notepad_wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 3vh;
+}
+
+.astext {
+  background: none;             
+  font-family: inherit;  
+  font-size: inherit;    
+  cursor: pointer;
+  border:none;    
+  width: 100%;
+}
+
+.note_table {
+    width: 90vw;
+    margin-bottom: -3px;
+    margin-top: 7px;
+    margin-right: 2%;
+}
+
+#note_header_row {
+    display: flex;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    flex-direction: row;
+    position: relative;
+}
+
+
+#new_note_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 24px;
+    width: 24px;
+    margin-left: 10px;
+    color: var(--text)
+
+}
+
+.header {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 95%;
+    height: 15%;
+}
+
+.action_buttons {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+.lbtns {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.rbtns {
+    margin-left: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+
+
+.action_buttons .button_well {
+    width: 32px;
+    height: 32px;
+}
+
+.titlebox {
+    max-width: 60%;
+}
+
+.titlebox .button_well {
+    width: 100%;
+    height: 32px;
+}
+
+.textbox {
+    padding: 10px;
+    margin-bottom: 1px;
+    width: 100%;
+    margin-left: -3px;
+}
+
+#note_title_input {
+    color: var(--text);
+    width: 100%;
+}
+
+#note_title_input:focus {
+  outline:none;
+}
+
+.action_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 80%;
+}
+
+.action_button.active {
+    background: linear-gradient(to bottom right,
+      color-mix(in srgb, var(--glass), transparent 30%),
+      color-mix(in srgb, var(--glass), transparent 65%));
+    border: 1px solid color-mix(in srgb, var(--glass), transparent 40%);
+    box-shadow: 
+      0 25px 50px rgba(0, 0, 0, 0.3),
+      inset 0 0 15px color-mix(in srgb, var(--glass), transparent 60%),
+      inset 0 1px 0 color-mix(in srgb, var(--glass), transparent 20%);
+}
+
+.note_tab {
+    z-index: 1;
+    width: 95.05vw;
+    height: 50vh;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#note_box_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:95%;
+    height:80%;
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    color: var(--text);
+    outline: none;
+    box-shadow: 
+        inset 6px 6px 12px rgba(0, 0, 0, 0.4), 
+        inset -2px -2px 8px color-mix(in srgb, var(--glass), transparent 95%),
+        0px 1px 1px color-mix(in srgb, var(--glass), transparent 90%);
+
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+#note_box {
+    width: 97%;
+    height: 90%;
+    padding: 0px 15px;
+    white-space:pre-wrap;
+    overflow: auto;
+}
+
+.note_title {
+    color: var(--text);
+    white-space: nowrap;
+}
+
+#note_box:focus {
+  outline:none;
+}
+
+.note_title br{
+    display:none;
+}
+.note_box:focus {
+    outline:none;
+}
+
+.note_title:focus {
+    outline:none;
+}
+
+#color_picker_wrapper {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    width: 25vw;
+    height: 50vh;
+    background-color: var(--bg);
+    z-index: 999;
+    visibility: hidden;
+}
+
+#color_picker_container {
+    width: 95%;
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:flex-start;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+#color_picker_container span {
+    color: var(--text);
+    margin-top: auto;
+}
+
+#color_picker_container a {
+    color: skyblue
+}
+
+#close_color_picker {
+    margin-top: 10px;
+    margin-left: auto;
+}
+
+#color_picker {
+    padding-top: 0px;
+}
+
+#color_icon {
+    background-color: var(--picker_color);
+    width: 32px;
+    height: 12px;
+    border-radius: 100px;
+}
+

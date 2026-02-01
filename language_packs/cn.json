@@ -1,0 +1,34 @@
+{
+    "navbar": [
+        {"key": "tools", "value": "工具"},
+        {"key": "about", "value": "关于我"},
+        {"key": "notepad", "value": "记事本"},
+        {"key": "timestamps", "value": "unix 时间戳"}
+    ],
+    "home": [
+        {"key": "title", "value": "huo.cafe"},
+        {"key": "subtitle", "value": "一组简易工具"}
+    ],
+    "epoch_conv": [
+        {"key": "utc", "value": "UTC"},
+        {"key": "local", "value": "本地"},
+        {"key": "monday", "value": "星期一"},
+        {"key": "tuesday", "value": "星期二"},
+        {"key": "wednesday", "value": "星期三"},
+        {"key": "thursday", "value": "星期四"},
+        {"key": "friday", "value": "星期五"},
+        {"key": "saturday", "value": "星期六"},
+        {"key": "sunday", "value": "星期天"},
+        {"key": "relative", "value": "相对"},
+        {"key": "day", "value": "天"},
+        {"key": "hour", "value": "小时"},
+        {"key": "minute", "value": "分钟"},
+        {"key": "ago", "value": "前"},
+        {"key": "from_now", "value": "后"},
+        {"key": "plural", "value": ""},
+        {"key": "timestamp", "value": "时间戳"}
+    ],
+    "notepad": [
+        {"key": "new_note", "value": "新笔记"}
+    ]
+}

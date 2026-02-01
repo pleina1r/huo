@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+    <title>huo</title>
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/epoch_conv.css">
+
+    <script src="scripts/epoch_conv.js" defer></script>
+    <script src="scripts/themes.js"></script>
+    <script src="components/navbar.js" defer></script>
+    <script src="components/dropdown.js" defer></script>
+    <script src="components/footer.js" defer></script>
+
+    <script src="scripts/language.js" defer></script>
+</head>
+<body>
+    <div class="wrapper">
+        <main-nav></main-nav>
+        <div id="epoch_conv" class="content_wrapper">
+            <div class="input_wrapper glass">
+                <div class="date_wrapper">
+                    <div class="button_well">
+                        <input class="text_box" id="year" placeholder="yyyy">
+                    </div>
+                    <div class="button_well">
+                        <input class="text_box" id="month" placeholder="mm">
+                    </div>
+                    <div class="button_well">
+                        <input class="text_box" id="day" placeholder="dd">
+                    </div>
+                </div>
+                <div class="time_wrapper">
+                    <div class="button_well">
+                        <input class="text_box" id="hour" placeholder="hh">
+                    </div>
+                    <div class="button_well">
+                        <input class="text_box" id="minute" placeholder="MM">
+                    </div>
+                    <div class="dd button_well">
+                        <c-dropdown id="tz" data="Local">
+                            <span>UTC</span>
+                        </c-dropdown>
+                    </div>
+                </div>
+
+                <div class="result_wrapper">
+                    <div class="button_well">
+                        <div class="glass result">
+                            <div id="result"> <!-- contains just the text, since its full of spans, needs to be formatted specially-->
+                            res
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <main-footer></main-footer>
+</body>

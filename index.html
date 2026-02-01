@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="styles/index.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+  <title>huo</title>
+  <script src="scripts/index.js"></script>
+  <script src="scripts/themes.js"></script>
+  <script src="components/navbar.js" defer></script>
+  <script src="components/dropdown.js" defer></script>
+  <script src="components/footer.js" defer></script>
+
+
+  <script src="scripts/language.js" defer></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <main-nav></main-nav>
+    <div class="body_wrapper">
+      <div id="home" class="glass heading">
+        <span data-i18n="title" id="title"></span>
+        <span data-i18n="subtitle" id="subtitle"></span>
+        <div id="button_row">
+          <div class="button_well">     
+            <button class="glass button linkbtn">
+              <img class="static_icon" src="icons/github.png" width="24px" height="24px"/>
+            </button>
+          </div>
+          <div class="button_well">     
+            <button class="glass button linkbtn">
+              <img class="static_icon" src="icons/mail.png" width="24px" height="24px"/>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <main-footer></main-footer>
+</body>

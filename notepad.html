@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/notepad.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+
+    <title>huo</title>
+
+    <script src="scripts/notepad.js"></script>
+    <script src="components/navbar.js" defer></script>
+    <script src="scripts/themes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
+    <script src="components/dropdown.js" defer></script>
+    <script src="components/footer.js" defer></script>
+
+    <script src="scripts/language.js" defer></script>
+</head>
+
+<body>
+    <div class="wrapper" id="wrapper">
+        <main-nav></main-nav>
+        <div id="notepad" class="notepad_wrapper">
+            <div id="color_picker_wrapper" class="glass">
+                <div id="color_picker_container">
+                    <div class="button_well action" id="close_color_picker">
+                        <button class="glass button action_button" onClick="closePicker()">
+                            X
+                        </button>
+                    </div>
+                    <div id="color_picker">
+
+                    </div>
+                    <span>Thanks to <a href="https://iro.js.org" target="_blank">iro.js</a> for the color picker!</span>
+                </div>
+            </div>
+            <div class="note_table">
+                <div id="note_header_row">
+                    <div id="new_note_btn_td">
+                        <button onclick="newTab()" class="glass button" id="new_note_btn">
+                            +
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="glass note_tab" id="note_tab">
+                <div class="header">
+                    <div class="action_buttons">
+                        <div class="lbtns">
+                            <div class="button_well action">
+                                <button class="glass button action_button" onClick="openPicker()">
+                                    <div id="color_icon">
+
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="button_well action">
+                                <button class="glass button action_button" id="bold_btn" onclick="toggleBold()">
+                                    <b>B</b>
+                                </button>
+                            </div>
+                            <div class="button_well action">
+                                <button class="glass button action_button" id="italic_btn" onclick="toggleItalic()">
+                                    <i>I</i>
+                                </button>
+                            </div>
+                            <div class="button_well action">
+                                <button class="glass button action_button" id="underline_btn" onclick="toggleUnderline()">
+                                    <u>U</u>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="rbtns">
+                            <div class="titlebox">
+                                <div class="button_well action">
+                                    <div class="textbox">
+                                        <!-- title changer -->
+                                        <input type="text" id="note_title_input" class="glass" placeholder="Note Title" oninput="update_note_title()" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="button_well action">
+                                <button title="Downloads the current note as a .txt file. Does not preserve formatting." class="glass button action_button" id="download_button" onclick="download_note()">
+                                    <img class="static_icon" src="icons/download.png" width="18px" height="18px"/>
+                                </button>
+                            </div>
+                            <div class="button_well">
+                                <button title="Deletes the currently active note." class="glass button action_button" id="delete_button" onclick="delete_note()">
+                                    <img class="static_icon" src="icons/trash.png" width="20px" height="20px"/>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="note_box_container">
+                    <div id="note_box" contenteditable="true">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <main-footer text="may be buggy on mobile!"></main-footer>
+</body>

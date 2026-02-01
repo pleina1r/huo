@@ -1,0 +1,384 @@
+@font-face {
+  font-family: 'cn';
+  src: url('../fonts/MaShanZheng-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'en';
+  src: url('../fonts/Zain-Regular.ttf');
+}
+
+
+:root {
+  --bg: #2d2a32;
+  --text: #fefae0;
+  --glass: #ffdd00;
+  --img_filter: invert(94%) sepia(7%) saturate(1214%) hue-rotate(325deg) brightness(107%) contrast(103%);
+}
+
+body {
+  background-color: var(--bg);
+}
+
+
+
+.glass {
+  font-family: 'en';
+  background:
+    linear-gradient(to bottom right,
+      color-mix(in srgb, var(--glass), transparent 45%),
+      color-mix(in srgb, var(--glass), transparent 75%)
+    );
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border-radius: 5px;
+  border: 1px solid color-mix(in srgb, var(--glass), transparent 70%);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 color-mix(in srgb, var(--glass), transparent 40%);
+    
+}
+
+.button {
+  display: flex;
+  text-align: center;
+  width: 150px;
+  height: 35px;
+  justify-content: center;
+  align-items: center;
+  font-size: large;
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.button:hover {
+  background: linear-gradient(to bottom right,
+      color-mix(in srgb, var(--glass), transparent 30%),
+      color-mix(in srgb, var(--glass), transparent 65%)
+      );
+  border: 1px solid color-mix(in srgb, var(--glass), transparent 40%);
+  box-shadow: 
+    0 25px 50px rgba(0, 0, 0, 0.3),
+    inset 0 0 15px color-mix(in srgb, var(--glass), transparent 60%),
+    inset 0 1px 0 color-mix(in srgb, var(--glass), transparent 20%);
+}
+
+.button:active {
+  transform: translateY(0);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.wrapper {
+  font-family: 'en';
+}
+.head_wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width:100vw;
+  padding: 0px 10px;
+  z-index: 999;
+}
+
+#main_buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  margin-left: 125px;
+}
+
+
+.logo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  font-family: 'cn';
+  font-size: xx-large;
+  color: var(--text);
+  margin-right: auto;
+}
+
+.logo a {
+  text-decoration: none;
+  color: var(--text)
+}
+
+.static_icon {
+  filter: var(--img_filter);
+}
+
+.dropdown {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s ease;
+  height: 60px; /* do not change */
+  z-index: 999;
+}
+
+
+.dropdown_wrapper {
+  position: absolute;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  top: 100%;
+  width: 100%;
+  opacity: 1;
+}
+
+.dropdown:hover .dropdown_wrapper {
+  padding-top: 5px;
+  pointer-events: auto;
+}
+
+.dropdown_content {
+  display: flex;
+  flex-direction: column;
+  font-size: medium;
+}
+
+.dropdown_content.glass {
+  opacity: 1;
+  background: none;
+  width: inherit;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  position: absolute;
+  visibility: hidden;
+  transition: all 0.3s;
+  border: 1px solid transparent;
+  box-shadow: none; 
+}
+
+/* weird blur shit because you cant fade out a blurred element with opacity and keep the blur */
+.dropdown_content.glass::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  
+  background: linear-gradient(to bottom right,
+      color-mix(in srgb, var(--glass), transparent 45%),
+      color-mix(in srgb, var(--glass), transparent 75%)
+  );
+  
+  border: 1px solid color-mix(in srgb, var(--glass), transparent 70%);
+  
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 color-mix(in srgb, var(--glass), transparent 40%);
+  
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  opacity: 0;
+  
+  transition: opacity 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+.dropdown_content.glass a,
+.dropdown_content.glass span,
+.dropdown_content.glass img {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.dropdown:hover .dropdown_content {
+  visibility: visible;
+}
+
+.dropdown:hover .dropdown_content::before {
+  opacity: 1;
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+}
+
+.dropdown:hover .dropdown_content a,
+.dropdown:hover .dropdown_content span,
+.dropdown:hover .dropdown_content img {
+  opacity: 1;
+}
+
+.dropdown_element {
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 5px;
+  text-decoration: none;
+  font-size: small;
+  transition: background 0.2s ease;
+  cursor: pointer;
+}
+
+.dropdown_element a {
+  text-decoration: none;
+  color: var(--text);
+}
+
+.dropdown_element:hover {
+  background-color: color-mix(in srgb, var(--glass), transparent 75%);
+}
+
+
+
+.language_selector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  margin-left: auto;
+}
+
+.theme_selector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 125px;
+  margin-left: auto;
+}
+
+.theme_selector .dropdown:hover .dropdown_wrapper {
+  padding-top: 0px;
+}
+
+#selected_theme_name {
+  padding-left: 5px;
+  font-size: small;
+}
+
+.theme_list_name {
+  color: var(--text);
+  padding-left: 5px;
+}
+
+.body_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+  height: 40vh;
+  width: 50%;
+  margin-top: 100px;
+}
+
+#button_row {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.button_well {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 5px;
+  background-color: var(--bg);
+  border: 1px solid color-mix(in srgb, var(--glass), transparent 30%);
+  
+}
+
+.linkbtn {
+  width: 32px;
+  height: 32px;
+}
+
+#title {
+  font-size:xx-large;
+}
+
+#subtitle {
+  font-size: medium;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text);
+  font-family: 'en';
+  font-size: small;
+  width: 100%;
+  z-index: 100;
+}
+
+
+@media (max-width: 800px) {
+  .head_wrapper {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .navbar {
+    flex-direction: column;
+    width: 100%;
+    padding: 10px 0px;
+  }
+
+  #main_buttons {
+    margin-left: 0;
+
+  }
+
+  .logo {
+    margin-right: 0;
+    margin-bottom: 10px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .language_selector {
+    margin-left: 0;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .dropdown {
+    height: auto;
+    width: 100%;
+  }
+
+  .theme_selector {
+    margin-left: 0;
+    margin-top: 0;
+    justify-content: center;
+    z-index: 998;
+  }
+
+  .theme_selector .dropdown_wrapper {
+    width: 150px;
+  }
+
+  .navbar .button {
+    width: auto;
+    min-width: 150px;
+  }
+}

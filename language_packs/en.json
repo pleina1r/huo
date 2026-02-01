@@ -1,0 +1,34 @@
+{
+    "navbar": [
+        {"key": "tools", "value": "tools"},
+        {"key": "about", "value": "about"},
+        {"key": "notepad", "value": "notepad"},
+        {"key": "timestamps", "value": "unix timestamps"}
+    ],
+    "home": [
+        {"key": "title", "value": "huo.cafe"},
+        {"key": "subtitle", "value": "a small collection of tools"}
+    ],
+    "epoch_conv": [
+        {"key": "utc", "value": "UTC"},
+        {"key": "local", "value": "Local"},
+        {"key": "monday", "value": "Monday"},
+        {"key": "tuesday", "value": "Tuesday"},
+        {"key": "wednesday", "value": "Wednesday"},
+        {"key": "thursday", "value": "Thursday"},
+        {"key": "friday", "value": "Friday"},
+        {"key": "saturday", "value": "Saturday"},
+        {"key": "sunday", "value": "Sunday"},
+        {"key": "relative", "value": "Relative"},
+        {"key": "day", "value": "day"},
+        {"key": "hour", "value": "hour"},
+        {"key": "minute", "value": "minute"},
+        {"key": "ago", "value": " ago"},
+        {"key": "from_now", "value": " from now"},
+        {"key": "plural", "value": "s"},
+        {"key": "timestamp", "value": "Timestamp"}
+    ],
+    "notepad": [
+        {"key": "new_note", "value": "New Note"}
+    ]
+}
